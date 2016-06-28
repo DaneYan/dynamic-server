@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户管理系统</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container" style="margin-top: 30px">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <button onclick="add()" class="btn btn-primary">添加用户</button>
+        </div>
+        <div class="panel-body">
+            <table class="table table-responsive text-center">
+                <thead>
+                    <tr>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">用户名</th>
+                        <th class="text-center">操作</th>
+                    </tr>
+                </thead>
+
+                <tbody id="userList">
+
+                </tbody>
+            </table>
+        </div>
+        <div class="panel-footer">
+            <nav>
+                <ul class="pagination"></ul>
+            </nav>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="userModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">用户管理</h4>
+            </div>
+            <div class="modal-body">
+                   <form class="form-horizontal">
+                       <input class="form-control" type="hidden" name="userid" id="userid">
+                       <div class="form-group">
+                           <label for="username" class="col-xs-2">用户名</label>
+                           <div class="col-xs-10">
+                               <input class="form-control" type="text" name="username" id="username">
+                           </div>
+
+                       </div>
+                       <div class="form-group">
+                           <div class="col-xs-10 col-xs-offset-2">
+                               <button  type="button"  onclick="save()" class="btn btn-default">保存</button>
+                               <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                           </div>
+
+                       </div>
+                   </form>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+</body>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="index.js"></script>
+</html>
